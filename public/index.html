@@ -1,43 +1,205 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Bag Man Fishing Charters</title>
+<meta name="description" content="Sailing from Point View Marina in Wakefield RI, Bag Man Fishing Charters will bring your party to the Inshore / Offshore fishing grounds with speed, comfort and safety" />
+<meta name="keywords" content="RI Charter Fishing,Rhode Island Charter Fishing,RI Charter boats,Rhode Island Charter Boats,Charter Fishing RI,Charter Fishing Rhode Island,Rhode Island Off Shore Fishing,Rhode Island Striped Bass Fishing,Rhode Island Shark Fishing,Block Island Fishing,Rhode Island Fluke Fishing,Charter fishing,charter boat,RI,Mako,Thresher,Blue Sharks,Yellowfin,Bluefin,Albacore Tuna,Blue Marlin,White Marlin,Dolphin,Bonito,Striped Bass,Bluefish,Fluke,Cod,Tautog,Blackfish,Sea Bass,Scup" />
+<!--validated 03/05/19-->
+<link rel="shortcut icon" href="CapsShieldIcon.ico" type="image/x-icon" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+		 <link href="css/bootstrap.css" rel="stylesheet">
+		 <!-- <link href="css/NavV2.css" rel="stylesheet"> -->
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via  -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<link rel="stylesheet" type="text/css" href="BagMan.css">
+<!-- Including this breaks the nav menu in mobile. -->
+<!-- <link href="css/BagMan.css" rel="stylesheet"> -->
+
+<!-- Link colors from the master style sheet don't seem to work properly unless they are repeated here. -->
+<style>
+
+
+a:link { color: #000f4b;}
+a:visited { color: #ffffff; }
+a:hover { color: #ffffff; }
+a:active { color: #000000; }
+
+div.content
+{background-color: #009bde;}
+
+</style>
+
+
+<!-- the next two Javascripts are for the mobile navigation thingy -->
+<script >
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+// this next CDATA thing allows my AND to validate
+// <![CDATA[
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+ // ]]>
+    {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","ajax_info.txt",true);
+xmlhttp.send();
+}
+</script>
+
+<script>
+function loadXMLDocR()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+// this next CDATA thing allows my AND to validate
+// <![CDATA[
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+ // ]]>
+   {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","NoAjaxInfo.txt",true);
+xmlhttp.send();
+}
+</script>
+
+</head>
+
+<body>
+
+<map name="Home" id="Home">
+<area alt="Home" shape="rect" coords="0,0,530,300" href="index.php" />
+</map>
+
+
+<map name="MobileHome" id="MobileHome">
+<area alt="Home" shape="rect" coords="0,0,350,47" href="index.php" />
+</map>
+
+<map name="emailLou" id="emailLou">
+<area alt="Home" shape="rect" coords="146,111,477,135" href="mailto:lou@bagmanfishing.com" />
+</map>
+
+<table style="width:100%; border-spacing: 0px;">
+
+<tr>
+<td style="vertical-align:top; background-color: #ffffff;"><a href="mailto:lou@bagmanfishing.com"><img src="HeaderLeft.jpg" width="533" height="300" alt="Louis Soldani" title="Louis Soldani" class="HeaderZombie"></a>
+<div class="mobileShow">
+<div id="myDiv" style="z-index: 1; position:absolute;">
+<a href="" onclick="loadXMLDoc(); return false;"><img src="MobileNavGraphic.png" width="81" height="67" alt="Mobile Nav Graphic" title="Mobile Nav Graphic" /></a></div>
+</div>
+</td>
+
+<td style="vertical-align:top" class="ZeroWithColor1">
+<span id="Switcher1"><a href="index.php" id="MobileLink"></a>
+  <img id="Houdini1" class="header" src="BagManHeader533x300.jpg" alt="Bag Man Fishing Charters" title="Bag Man Fishing Charters" usemap="#Home">
+</span>
+</td>
+
+
+<td style="vertical-align:top; background-color: #ffffff;"><img src="HeaderRight.jpg" width="533" height="300" alt="Louis Soldani" title="Louis Soldani" class="HeaderZombie"/>
+</td>
+
+</tr>
+
+<tr>
+  <td style="vertical-align:top;" colspan="3">
+
+<!-- If I declare the table this way, a content box will be centered below the header graphic. -->
+<!-- <table style="width:90%"> -->
+
+<!-- If I declare the table this way, the content box will be centered within the section that excludes the nav menu. -->
+<table class="CenterZero" style="width: 100%; ">
+<tr>
+
+<!--navigation menu cell-->
+<td style="vertical-align:top;" class="SeeYa">
+
+<div style="z-index: 1; position:relative;">
+<?
+include 'navigation.php';
+?>
+</div>
+</td>
+
+
+<!--page content cell-->
+<td style="vertical-align:top;" >
+
+<br/>
+<?
+include "photoHeader.php";
+?>
+
+<table class="LtBlueRoundedCorners" style="width:100%">
+<tr>
+<td>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+</td>
+</tr>
+
+</div>
+
+</table>
+
+
+
+
+<!-- This is the closure of the page content cell..... -->
+</td>
+
+<td class="SeeYa"><img src="Spacer.jpg" width="175" height="27" alt=" " title=" " /></td>
+</tr>
+
+</table><br/><br/>
+
+
+</td>
+</tr>
+</table>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
 </html>
